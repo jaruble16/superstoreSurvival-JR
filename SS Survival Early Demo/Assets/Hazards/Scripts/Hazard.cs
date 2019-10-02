@@ -12,5 +12,5 @@ public class Hazard : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-    }
+    } 
 }

@@ -22,6 +22,15 @@ public class CollectibleManager : MonoBehaviour
         _totalToiletPaper = FindObjectsOfType<Collectible>().Length;
         DisplaytoiletPaperCount();
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            YouWinMenu.Instance.Show();
+        }
+    }
+
     void DisplaytoiletPaperCount()
     {
         toiletPaperCount.SetText(_collectedToiletPaper + " / " + _totalToiletPaper);
@@ -31,5 +40,9 @@ public class CollectibleManager : MonoBehaviour
     {
         _collectedToiletPaper++;
         DisplaytoiletPaperCount();
+        if (_collectedToiletPaper == _totalToiletPaper)
+        {
+            YouWinMenu.Instance.Show();
+        }
     }
 }
